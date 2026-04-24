@@ -90,3 +90,7 @@ Ayahuasca:
 - [[guardião|Guardião]]
 - [[protocolos|Protocolos]]
 - [[mysterium|Mysterium]]
+- [[sensação-corpo|Sensação Corpo]]
+- [[abstinência-sexual|Abstinência Sexual]]
+- [[dietas|Dietas]]
+- [[jurupari|Jurupari]]
