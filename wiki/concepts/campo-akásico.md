@@ -42,6 +42,26 @@ Pessoas que tiveram NDE relatam experiências similares:
 ### Ego Dissolution
 A dissolução do ego pode representar a "abertura" do filtro que normalmente impede o acesso direto ao campo.
 
+## Conexões com Teorias da Consciência
+
+### IIT (Integrated Information Theory - Tononi)
+Se o campo akásico armazena "informação integrada" de todo o universo, então o acesso a este campo durante ayahuasca representa aumento real em Φ (informação integrada). A experiência de "unidade cósmica" pode ser a consciência percebendo sua própria integração fundamental com o campo informacional do universo.
+
+### ORCH-OR (Penrose/Hameroff)
+Os eventos de Objective Reduction (OR) podem ser momentos em que a consciência individual se conecta temporariamente ao campo akásico. A geometria microtubular pode ser a "antena" através da qual o cérebro acessa o campo.
+
+### Panpsychismo (Chalmers/Goff)
+Se consciência é propriedade fundamental da matéria, o campo akásico seria o "campo fundamental" onde toda consciência está conectada. A ayahuasca não cria acesso ao campo — ela remove o filtro do ego/DMN que nos impede de perceber esta conexão fundamental.
+
+### DMN como Filtro (Carhart-Harris)
+O DMN funciona como filtro que bloqueia acesso ao campo akásico durante a vida ordinária. A redução do DMN por ayahuasca/DMT "abre o filtro", permitindo que a consciência individual se conecte temporariamente ao campo universal de informação.
+
+### DMT como Interface
+O DMT funciona como o mecanismo neuroquímico que modula a permeabilidade entre a consciência individual e o campo akásico:
+- Produção endógena de DMT aumenta em estados de transição (sono, morte, nascimento)
+- Ayahuasca permite acesso consciente a este sistema interno
+- A experiência de "acesso à informação" reflete esta conexão real com o campo
+
 ## Descoberta Original
 
 ```
@@ -59,7 +79,13 @@ nós temos o DMT como interface para acessar informação cósmica/universal.
 ## Related
 - [[ego-dissolution]]
 - [[experiencias-quase-morte]]
+- [[dmt-cerebro]] - DMT como interface neuroquímica
+- [[mecanismo-conciencia-transpersonal]] - Teorias sobre consciência transpersonal
+- [[consciencia-espiritualidade-summary]] - Síntese das teorias da consciência
 
 ## Fontes
+- Laszlo, E. (2004). Science and the Akashic Field - Teoria do campo akásico
 - ayahuasca-descobertas
 - ayahuasca-pesquisa-continua
+- Strassman, R. (2001). DMT: The Spirit Molecule - DMT como porta para estados não-ordinários
+- Tononi, G. (2004). Integrated Information Theory - IIT e integração de informação
