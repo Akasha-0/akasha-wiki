@@ -2,25 +2,43 @@
 
 ## Wiki Pages
 
-### Sources (Research)
-| Page | Summary | Date |
-|------|---------|------|
-| [ayahuasca-pesquisa-compilada](wiki/sources/ayahuasca-pesquisa-compilada.md) | Initial research compilation | 2026-04-24 |
-| [ayahuasca-pesquisa-continua](wiki/sources/ayahuasca-pesquisa-continua.md) | Ongoing research updates | 2026-04-24 |
-| [ayahuasca-psicoterapia-descobertas](wiki/sources/ayahuasca-psicoterapia-descobertas-2025-2026.md) | 2025-2026 scientific findings | 2026-04-24 |
-| [ayahuasca-descobertas](wiki/sources/ayahuasca-descobertas.md) | Key discoveries and insights | 2026-04-24 |
-| [ayahuasca-associacoes-integradas](wiki/sources/ayahuasca-associacoes-integradas.md) | Integrated associations and frameworks | 2026-04-24 |
-| [microdose-ayahuasca](wiki/sources/microdose-ayahuasca-depressao-ansiedade-panico.md) | Microdosing research for mental health | 2026-04-24 |
+### Sources (Processed Summaries)
+| Page | Summary | Sources |
+|------|---------|---------|
+| [ayahuasca-pesquisa-compilada-summary](wiki/sources/ayahuasca-pesquisa-compilada-summary.md) | Initial research compilation | 2026-04-24 |
+| [ayahuasca-psicoterapia-descobertas-2025-2026-summary](wiki/sources/ayahuasca-psicoterapia-descobertas-2025-2026-summary.md) | Scientific findings 2025-2026 | 2026-04-24 |
+| [ayahuasca-descobertas-summary](wiki/sources/ayahuasca-descobertas-summary.md) | Original discoveries and hypotheses | 2026-04-24 |
+| [ayahuasca-associacoes-integradas-summary](wiki/sources/ayahuasca-associacoes-integradas-summary.md) | Integrated associations and insights | 2026-04-24 |
+| [ayahuasca-pesquisa-continua-summary](wiki/sources/ayahuasca-pesquisa-continua-summary.md) | Ongoing research: 5-MeO-DMT, NDE, traditions | 2026-04-24 |
+| [microdose-ayahuasca-summary](wiki/sources/microdose-ayahuasca-summary.md) | Microdosing for depression, anxiety, panic | 2026-04-24 |
 
 ### Concepts
-_(Coming soon)_
+| Page | Summary | Tags |
+|------|---------|------|
+| [neuroplasticidade-ayahuasca](wiki/concepts/neuroplasticidade-ayahuasca.md) | Brain changes and neuroplasticity | neurociência, cérebro |
+| [ptsd-tratamento-ayahuasca](wiki/concepts/ptsd-tratamento-ayahuasca.md) | PTSD treatment efficacy | trauma, veteranos |
+| [ego-dissolution](wiki/concepts/ego-dissolution.md) | Ego dissolution and mystical experience | consciência, self |
+| [set-setting](wiki/concepts/set-setting.md) | Set and Setting guidelines | preparação, ritual |
+| [modelo-meaning-reconstruction](wiki/concepts/modelo-meaning-reconstruction.md) | A-MR model for grief | luto, integração |
+| [modelo-thrive](wiki/concepts/modelo-thrive.md) | THRIVE integration framework | integração, framework |
+| [integraçao-pos-cerimonia](wiki/concepts/integraçao-pos-cerimonia.md) | Post-ceremony integration | integração |
+| [campo-akásico](wiki/concepts/campo-akásico.md) | Akashic field hypothesis | espiritualidade, consciência |
 
 ### Entities
-_(Coming soon)_
+| Page | Type | Summary |
+|------|------|---------|
+| [maps](wiki/entities/maps.md) | organização | Psychedelic research organization |
+| [nature-scientific-reports](wiki/entities/nature-scientific-reports.md) | publicação | Journal that published A-MR trial |
+| [santo-daime](wiki/entities/santo-daime.md) | tradição | Brazilian ayahuasca tradition |
+| [johns-hopkins](wiki/entities/johns-hopkins.md) | instituição | Psychedelic research center |
+| [gabriel-ayahuasca-journey](wiki/entities/gabriel-ayahuasca-journey.md) | pessoa | Gabriel's journey and goals |
 
 ---
 
 ## Statistics
-- **Sources**: 6
-- **Wiki pages**: 0
+- **Sources**: 6 (raw)
+- **Source summaries**: 6 (wiki/sources)
+- **Concepts**: 8
+- **Entities**: 5
+- **Total wiki pages**: 19
 - **Last updated**: 2026-04-24
