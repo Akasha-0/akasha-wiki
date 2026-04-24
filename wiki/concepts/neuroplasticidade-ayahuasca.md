@@ -78,3 +78,8 @@ A neuroplasticidade induzida pela ayahuasca cria uma "janela de plasticidade" �
 - [[depressão-refratária|Depressão Refratária]]
 - [[ansiedade-social|Ansiedade Social]]
 - [[dependência-química|Dependência Química]]
+- [[contraindicações|Contraindicações]]
+- [[journaling|Journaling]]
+- [[neuroinflamação|Neuroinflamação]]
+- [[suporte-emergência|Suporte Emergência]]
+- [[adhd|Adhd]]
