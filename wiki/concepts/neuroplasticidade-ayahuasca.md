@@ -54,3 +54,11 @@ A neuroplasticidade induzida pela ayahuasca cria uma "janela de plasticidade" â€
 - PMC12604547 (Journal of Magnetic Resonance Imaging, 2025)
 - ayahuasca-psicoterapia-descobertas-2025-2026
 - ayahuasca-pesquisa-compilada
+
+- [[individuacao-junguiana|Individuacao Junguiana]]
+- [[cura-trauma-ancestral|Cura Trauma Ancestral]]
+- [[regulacao-emocional|Regulacao Emocional]]
+- [[default-mode-network|Default Mode Network]]
+- [[attachment-trauma|Attachment Trauma]]
+- [[connectoma|Connectoma]]
+- [[microbioma-intestinal|Microbioma Intestinal]]
