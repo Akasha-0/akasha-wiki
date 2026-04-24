@@ -1,16 +1,21 @@
 {
-  "last_run": "2026-04-24T17:00:26.640502",
+  "last_run": "2026-04-24T17:00:27.653108",
   "stats": {
-    "cycles_run": 2,
-    "concepts_created": 10,
-    "connections_added": 30,
-    "orphans_fixed": 6
+    "cycles_run": 3,
+    "concepts_created": 15,
+    "connections_added": 45,
+    "orphans_fixed": 7
   },
   "created": [
     "Contraindica\u00e7\u00f5es",
     "Journaling",
     "Neuroinflama\u00e7\u00e3o",
     "Suporte de Emerg\u00eancia",
-    "TDAH"
+    "TDAH",
+    "Psicopatologia",
+    "Revis\u00e3o de Integra\u00e7\u00e3o",
+    "Psicose",
+    "Abrea\u00e7\u00e3o",
+    "Sistema Serotonin\u00e9rgico"
   ]
 }
