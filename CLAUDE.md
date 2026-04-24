@@ -11,16 +11,17 @@ This is a personal knowledge base for exploring the intersection of **Ayahuasca*
 ```
 akasha-wiki/
 ├── raw/                    # Immutable source documents (READ ONLY)
-│   └── ayahuasca-*.md
+│   └── ayahuasca-*.md      # Original research files
 ├── wiki/
-│   ├── sources/           # Processed source summaries
+│   ├── sources/           # Processed source summaries (LLM generated)
 │   ├── concepts/          # Topic/concept pages
 │   └── entities/          # People, institutions, studies
 ├── index.md               # Catalog of all wiki pages
 ├── log.md                 # Chronological activity log
-├── README.md               # Wiki overview
-└── CLAUDE.md              # This file
+└── CLAUDE.md              # This file (schema)
 ```
+
+**Important**: `raw/` is READ ONLY. Never edit files in raw/. All LLM-generated content goes in `wiki/`.
 
 ## Conventions
 
