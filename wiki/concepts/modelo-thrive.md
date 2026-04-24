@@ -46,3 +46,5 @@ O THRIVE é um framework de integração psicoterapêutica para experiências co
 ## Fontes
 - ayahuasca-associacoes-integradas
 - ayahuasca-psicoterapia-descobertas-2025-2026
+
+- [[transtorno-obsessivo-compulsivo|Transtorno Obsessivo Compulsivo]]
