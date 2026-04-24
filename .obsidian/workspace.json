@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "926c28626aa40910",
+    "type": "split",
+    "children": [
+      {
+        "id": "fbdb1504e8b3b6b8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e1109823eb8738c",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Visualização em gráfico"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "942adbc32eb4ccc2",
+    "type": "split",
+    "children": [
+      {
+        "id": "e9f057ac3aa5c76d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3241e944f5a3d106",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "33eeafdc69a39895",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "8856c2965572baa8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "145d6c22b137225b",
+    "type": "split",
+    "children": [
+      {
+        "id": "0fc402dddbfa1f8d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "44eb178bfa716af9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos"
+            }
+          },
+          {
+            "id": "c644f00be43c0ac9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída"
+            }
+          },
+          {
+            "id": "031dcdf69b1ad1ad",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "93a78dec99eccf8c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "a375a05ab4599836",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "1e1109823eb8738c",
+  "lastOpenFiles": [
+    "wiki/concepts/astrologia-karmica-expansao-consciencia.md",
+    "wiki/concepts/entity-encounters-taxonomia.md",
+    "wiki/concepts/luz-encaustica-visao-espiritual.md",
+    "wiki/concepts/experiencias-misticas-taxonomia.md",
+    "wiki/concepts/psicologia-transpessoal-grof.md",
+    "wiki/concepts/cura-womb-holistica.md",
+    "wiki/concepts/circulos-sagrados-ritual-comunidade.md",
+    "wiki/concepts/brainspotting-ayende-occipital.md",
+    "wiki/concepts/somatic-experiencing-trauma-ayende.md",
+    "wiki/concepts/psicoterapia-assistida-psicadelica-protocolos.md",
+    "wiki/concepts/crystal-healing-modalities.md",
+    "wiki/concepts/ibogaina-medicina-anti-adictiva.md",
+    "wiki/concepts/kambo-medicina-cura.md",
+    "wiki/concepts/cromoaterapia-chakras-cores.md",
+    "wiki/concepts/fitoterapia-plantas-medicinais.md",
+    "wiki/concepts/consciousness-biology-gyrus-angularis.md",
+    "wiki/concepts/orch-or-penrose-stuart.md",
+    "wiki/concepts/teoria-integracao-informacao-iit.md",
+    "wiki/concepts/numerologia-cabalistica-raizes.md",
+    "wiki/concepts/holotropic-breathwork.md",
+    "wiki/concepts/yoga-sistema-autoconhecimento.md",
+    "wiki/concepts/constelacao-familiar-hellinger.md",
+    "wiki/concepts/aromaterapia-cura-oleos-essenciais.md",
+    "wiki/concepts/ifs-sistemas-familiares-internos.md",
+    "wiki/concepts/emdr-dessensibilizacao-reprocessamento.md",
+    "wiki/concepts/mapacho-tabaco-sagrado.md",
+    "wiki/concepts/mapacho-tabaco-sagrado.md.tmp.30356.1777061220501",
+    "index.md.tmp",
+    "sed17jOIV",
+    "sedCoZH16",
+    "index.md.tmp.26964.1777058649611",
+    "Clippings"
+  ]
+}
