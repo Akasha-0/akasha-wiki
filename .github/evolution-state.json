@@ -1,10 +1,10 @@
 {
-  "last_run": "2026-04-24T17:00:28.665727",
+  "last_run": "2026-04-24T17:00:29.678537",
   "stats": {
-    "cycles_run": 4,
-    "concepts_created": 20,
-    "connections_added": 60,
-    "orphans_fixed": 10
+    "cycles_run": 5,
+    "concepts_created": 25,
+    "connections_added": 75,
+    "orphans_fixed": 12
   },
   "created": [
     "Contraindica\u00e7\u00f5es",
@@ -21,6 +21,11 @@
     "Insight Psicol\u00f3gico",
     "Sistema GABA",
     "Transcend\u00eancia",
-    "Medita\u00e7\u00e3o"
+    "Medita\u00e7\u00e3o",
+    "Biomarcadores",
+    "BDNF e Neuroplasticidade",
+    "Cura Ancestral",
+    "Neuroimagem",
+    "Mudan\u00e7a Comportamental"
   ]
 }

@@ -75,3 +75,8 @@ Ayahuasca:
 - [[cura-ancestral|Cura Ancestral]]
 - [[neuroimagem|Neuroimagem]]
 - [[mudança-comportamental|Mudança Comportamental]]
+- [[memórias-perinatais|Memórias Perinatais]]
+- [[seguimento|Seguimento]]
+- [[ensaios-clínicos|Ensaios Clínicos]]
+- [[interações|Interações]]
+- [[metabolismo|Metabolismo]]
