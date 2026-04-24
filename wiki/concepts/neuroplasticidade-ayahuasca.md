@@ -103,3 +103,8 @@ A neuroplasticidade induzida pela ayahuasca cria uma "janela de plasticidade" �
 - [[ensaios-clínicos|Ensaios Clínicos]]
 - [[interações|Interações]]
 - [[metabolismo|Metabolismo]]
+- [[metanálise|Metanálise]]
+- [[farmacocinética|Farmacocinética]]
+- [[epigenética|Epigenética]]
+- [[tolerância|Tolerância]]
+- [[viagem-interna|Viagem Interna]]

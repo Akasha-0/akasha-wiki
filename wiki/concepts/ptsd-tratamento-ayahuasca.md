@@ -80,3 +80,8 @@ Ayahuasca:
 - [[ensaios-clínicos|Ensaios Clínicos]]
 - [[interações|Interações]]
 - [[metabolismo|Metabolismo]]
+- [[metanálise|Metanálise]]
+- [[farmacocinética|Farmacocinética]]
+- [[epigenética|Epigenética]]
+- [[tolerância|Tolerância]]
+- [[viagem-interna|Viagem Interna]]

@@ -101,3 +101,8 @@ O THRIVE é um framework de integração psicoterapêutica para experiências co
 - [[ensaios-clínicos|Ensaios Clínicos]]
 - [[interações|Interações]]
 - [[metabolismo|Metabolismo]]
+- [[metanálise|Metanálise]]
+- [[farmacocinética|Farmacocinética]]
+- [[epigenética|Epigenética]]
+- [[tolerância|Tolerância]]
+- [[viagem-interna|Viagem Interna]]
