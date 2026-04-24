@@ -1,21 +1,35 @@
 {
-  "last_run": "2026-04-24T17:00:36.901977",
+  "last_run": "2026-04-24T17:00:37.915314",
   "stats": {
-    "cycles_run": 8,
-    "concepts_created": 40,
-    "connections_added": 120,
+    "cycles_run": 9,
+    "concepts_created": 44,
+    "connections_added": 132,
     "orphans_fixed": 19
   },
   "created": [
-    "Metan\u00e1lises",
-    "Farmacocin\u00e9tica",
-    "Epigen\u00e9tica",
-    "Toler\u00e2ncia",
+    "Metanálises",
+    "Farmacocinética",
+    "Epigenética",
+    "Tolerância",
     "Viagem Interna",
     "Numinoso",
-    "Revis\u00e3o de Vida",
-    "Guardi\u00e3o de Cerim\u00f4nia",
+    "Revisão de Vida",
+    "Guardião de Cerimônia",
     "Protocolos Cerimoniais",
-    "Mysterium"
-  ]
+    "Mysterium",
+    "Embodied Experience",
+    "Abstinência Sexual",
+    "Dietas Tradicionais",
+    "Jurupari"
+  ],
+  "created_concepts": [
+    "periodos-criticos-plasticidade",
+    "reconstrucao-significado",
+    "extincao-medo",
+    "mindfulness-compassao",
+    "seguranca-ayahuasca",
+    "formacao-terapia-psicodelica"
+  ],
+  "concepts_created": 6,
+  "total_concepts": 38
 }
