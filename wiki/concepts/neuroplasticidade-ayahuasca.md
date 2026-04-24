@@ -93,3 +93,8 @@ A neuroplasticidade induzida pela ayahuasca cria uma "janela de plasticidade" �
 - [[gaba|Gaba]]
 - [[transcendência|Transcendência]]
 - [[meditação|Meditação]]
+- [[biomarcadores|Biomarcadores]]
+- [[bdnf|Bdnf]]
+- [[cura-ancestral|Cura Ancestral]]
+- [[neuroimagem|Neuroimagem]]
+- [[mudança-comportamental|Mudança Comportamental]]
