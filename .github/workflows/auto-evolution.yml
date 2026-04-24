@@ -1,0 +1,437 @@
+name: 🔮 Auto-Evolution Cycle
+
+on:
+  schedule:
+    # Executar a cada 6 horas
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      depth:
+        description: 'Profundidade de análise (1-5)'
+        required: false
+        default: '2'
+      theme_override:
+        description: 'Tema específico para explorar (opcional)'
+        required: false
+        default: ''
+
+env:
+  WIKI_DIR: ${{ github.workspace }}/wiki
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 pyyaml
+
+      - name: Phase 1 - Analyze Current State
+        id: analyze
+        run: |
+          echo "📊 Conceitos atuais: $(find wiki/concepts -name '*.md' 2>/dev/null | wc -l)"
+          echo "📊 Entidades atuais: $(find wiki/entities -name '*.md' 2>/dev/null | wc -l)"
+          
+          # Extrair tags para análise
+          grep -rho "tags:" wiki/concepts/*.md 2>/dev/null | sort -u || true
+          
+          echo "concepts=$(find wiki/concepts -name '*.md' 2>/dev/null | wc -l)" >> $GITHUB_OUTPUT
+          echo "entities=$(find wiki/entities -name '*.md' 2>/dev/null | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Phase 2 - Identify Knowledge Gaps
+        id: gaps
+        run: |
+          python3 << 'PYEOF'
+import os
+import json
+import re
+from collections import defaultdict
+
+# Clusters de conhecimento relacionados à ayahuasca
+TOPIC_CLUSTERS = {
+    "neurosciência": [
+        "default mode network", "connectoma", "córtex pré-frontal",
+        "neurotransmissores", "sinapse", "plasticidade neural",
+        "rede neural default", "ativações neuronais", "fMRI ayahuasca"
+    ],
+    "terapêutico": [
+        "depressão refratária", "ansiedade social", "transtorno obsessivo compulsivo",
+        "dependência química ayahuasca", "autismo", "TDAH", "insônia",
+        "regulação emocional", "terapia assistida por psicodélicos"
+    ],
+    "psicológico": [
+        "psicose", "psicopatologia", "shadow work", "cura ancestral",
+        "trabalho emocional", "processamento de trauma", "abreação",
+        "reconciliação interna", "autorrealização", "individuação junguiana"
+    ],
+    "bioquímico": [
+        "beta-carbolinas", "harmala", "harmina", "tetrahidroharmina",
+        "dmt endógeno", "monoamina oxidase MAO", "triptaminas",
+        "farmacocinética ayahuasca", "metabolismo DMT"
+    ],
+    "cerimonial": [
+        "ianthe", "hoasca", "ayahuasca denominaciones",
+        "tribal ancestral", "dieta amazônica", "restrição alimentar ayahuasca",
+        "curandeirismo", "xamanismo contemporâneo"
+    ],
+    "espiritual": [
+        "unidade cósmica", "transcendência", "morte do ego",
+        "renascimento espiritual", "sagrado", "numinoso", "mysterium",
+        "experiência峰值", "states of consciousness", "estados não-ordinários"
+    ],
+    "pesquisa_clinica": [
+        "ensaio clínico fase 3", "ensaio clínico fase 2",
+        "fMRI ayahuasca", "neuroimagem", "psicometria ayahuasca",
+        "follow-up longitudinal", "escala HRS", "alucinações penguin"
+    ],
+    "histórico_social": [
+        "origens amazônicas", "Santo Daime história", "Barquinhos",
+        "UDV história", "contração colonial ayahuasca",
+        "neo-xamanismo", "movimento psicodélico contemporâneo"
+    ],
+    "integração": [
+        "integração pós-experiência", "terapia de integração",
+        "journaling ayahuasca", "processamento emocional",
+        "comunidades de integração", "após cerimonial ayahuasca"
+    ]
+}
+
+# Ler conceitos existentes
+EXPLORED = set()
+for f in os.listdir("wiki/concepts"):
+    if f.endswith('.md'):
+        title = f.replace('-', ' ').replace('.md', '')
+        EXPLORED.add(title.lower())
+        # Ler tags também
+        with open(f"wiki/concepts/{f}") as file:
+            content = file.read()
+            tags = re.findall(r'"([^"]+)"', content)
+            EXPLORED.update(t.lower() for t in tags)
+
+# Encontrar lacunas
+gaps = {}
+for cluster, topics in TOPIC_CLUSTERS.items():
+    unexplored = [t for t in topics if t.lower() not in EXPLORED]
+    if unexplored:
+        gaps[cluster] = unexplored
+
+# Priorização por impacto
+priority = {
+    "terapêutico": 10, "psicológico": 9, "neurosciência": 9,
+    "pesquisa_clinica": 8, "integração": 7, "bioquímico": 7,
+    "espiritual": 6, "cerimonial": 5, "histórico_social": 5
+}
+
+sorted_gaps = sorted(gaps.items(), key=lambda x: -priority.get(x[0], 5))
+
+with open('.github/gaps.json', 'w') as f:
+    json.dump({
+        "gaps": gaps,
+        "priority_order": [c for c, _ in sorted_gaps],
+        "total_gaps": sum(len(v) for v in gaps.values())
+    }, f, indent=2)
+
+print(f"🔍 {len(gaps)} clusters com lacunas encontradas")
+print(f"📚 {sum(len(v) for v in gaps.values())} temas não explorados")
+
+for cluster, topics in sorted_gaps[:3]:
+    print(f"\n🎯 {cluster}: {len(topics)} temas")
+    for t in topics[:3]:
+        print(f"   • {t}")
+
+PYEOF
+          cat .github/gaps.json
+
+      - name: Phase 3 - Research Priority Theme
+        id: research
+        run: |
+          DEPTH=${{ github.event.inputs.depth || '2' }}
+          THEME=${{ github.event.inputs.theme_override }}
+          
+          if [ -z "$THEME" ]; then
+            # Selecionar tema prioritário automaticamente
+            THEME=$(python3 << 'PYEOF'
+import json
+import random
+
+with open('.github/gaps.json') as f:
+    data = json.load(f)
+
+priority_scores = {
+    "terapêutico": 10, "psicológico": 9, "neurosciência": 9,
+    "pesquisa_clinica": 8, "integração": 7, "bioquímico": 7,
+    "espiritual": 6, "cerimonial": 5, "histórico_social": 5
+}
+
+themes = []
+for cluster, topics in data['gaps'].items():
+    score = priority_scores.get(cluster, 5)
+    themes.extend([(cluster, t, score) for t in topics])
+
+themes.sort(key=lambda x: -x[2])
+selected = random.choice(themes[:5]) if themes else None
+
+if selected:
+    print(f"{selected[0]}|{selected[1]}|{selected[2]}")
+PYEOF
+            )
+          fi
+          
+          echo "theme=$THEME" >> $GITHUB_OUTPUT
+          echo "cluster=$(echo $THEME | cut -d'|' -f1)" >> $GITHUB_OUTPUT
+          echo "topic=$(echo $THEME | cut -d'|' -f2)" >> $GITHUB_OUTPUT
+          echo "score=$(echo $THEME | cut -d'|' -f3)" >> $GITHUB_OUTPUT
+
+      - name: Phase 4 - Create Knowledge Discovery
+        if: steps.research.outputs.theme != ''
+        run: |
+          CLUSTER=${{ steps.research.outputs.cluster }}
+          THEME=${{ steps.research.outputs.topic }}
+          SCORE=${{ steps.research.outputs.score }}
+          
+          SLUG=$(echo "$THEME" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+          FILE="wiki/concepts/${SLUG}.md"
+          
+          if [ -f "$FILE" ]; then
+            echo "⚠️ Conceito já existe: $THEME"
+          else
+            echo "📝 Criando: $FILE"
+            
+            cat > "$FILE" << EOF
+---
+title: ${THEME^}
+tags: ["auto-descoberta", "${CLUSTER}", "expansão-$(date +%Y-%m)"]
+created: $(date +%Y-%m-%d)
+source: auto-evolution-cycle
+auto_generated: true
+cluster: ${CLUSTER}
+priority_score: ${SCORE}
+---
+
+# ${THEME^}
+
+> 🔮 **Descoberto automaticamente pelo sistema de auto-evolução da Wiki Akasha**
+> Cluster: ${CLUSTER} | Score: ${SCORE}/10
+> Data: $(date +%Y-%m-%d)
+
+## Resumo
+
+Este conceito foi descoberto através do sistema autônomo de expansão da wiki, identificando lacunas no conhecimento existente sobre ayahuasca e psicoterapia.
+
+## Conexões com Conceitos Existentes
+
+- [[modelo-thrive|Modelo THRIVE]] - framework terapêutico relacionado
+- [[neuroplasticidade-ayahuasca|Neuroplasticidade]] - mecanismo de ação
+- [[ptsd-tratamento-ayahuasca|PTSD e Ayahuasca]] - aplicações terapêuticas
+- [[ego-dissolution|Morte do Ego]] - processo psicológico
+- [[integração-pos-cerimonia|Integração]] - aplicação prática
+
+## Conexões com Entidades
+
+- [[maps|MAPS]] - pesquisa clínica
+- [[johns-hopkins|Johns Hopkins]] - estudos de segurança
+- [[nature-scientific-reports|Nature Scientific Reports]] - publicações
+
+## Relevância Clínica
+
+Este tema é relevante para aplicações terapêuticas da ayahuasca no contexto de ${CLUSTER}.
+
+## Hipóteses de Pesquisa
+
+1. Como ${THEME} se relaciona com os efeitos terapêuticos da ayahuasca?
+2. Quais mecanismos neurobiológicos estão envolvidos?
+3. Como a integração deste conhecimento pode melhorar os resultados clínicos?
+
+## Próximos Passos
+
+- [ ] Expandir com revisões de literatura
+- [ ] Adicionar estudos de caso
+- [ ] Conectar com experiências práticas documentadas
+- [ ] Mapear relação com tradições cerimoniais
+
+---
+
+*🤖 Gerado automaticamente pelo sistema de auto-evolução*
+*📅 Ciclo: $(date +%Y-%m-%dT%H:%M:%S)*
+EOF
+            
+            echo "✅ Conceito criado: $THEME"
+          fi
+
+      - name: Phase 5 - Update Cross-References
+        if: steps.research.outputs.theme != ''
+        run: |
+          THEME=${{ steps.research.outputs.topic }}
+          SLUG=$(echo "$THEME" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
+          
+          # Atualizar conceito mais relacionado (THRIVE)
+          if ! grep -q "$SLUG" wiki/concepts/modelo-thrive.md 2>/dev/null; then
+            sed -i "s/\(## Conceitos Relacionados\)/\1\n- [[${SLUG}|${THEME^}]]/" wiki/concepts/modelo-thrive.md 2>/dev/null || true
+            echo "🔗 Atualizado: modelo-thrive.md"
+          fi
+          
+          # Atualizar neuroplasticidade
+          if ! grep -q "$SLUG" wiki/concepts/neuroplasticidade-ayahuasca.md 2>/dev/null; then
+            sed -i "s/\(## Conceitos Relacionados\)/\1\n- [[${SLUG}|${THEME^}]]/" wiki/concepts/neuroplasticidade-ayahuasca.md 2>/dev/null || true
+            echo "🔗 Atualizado: neuroplasticidade-ayahuasca.md"
+          fi
+
+      - name: Phase 6 - Network Analysis
+        run: |
+          python3 << 'PYEOF'
+import os
+import re
+from collections import defaultdict
+
+connections = defaultdict(set)
+concepts = []
+
+for f in os.listdir('wiki/concepts'):
+    if f.endswith('.md'):
+        path = f'wiki/concepts/{f}'
+        concept = f.replace('.md', '')
+        concepts.append(concept)
+        
+        with open(path) as file:
+            content = file.read()
+            links = re.findall(r'\[\[([^\]|]+)', content)
+            connections[concept].update(l.replace('-', ' ').lower() for l in links)
+
+# Métricas de rede
+total_connections = sum(len(v) for v in connections.values())
+avg_connections = total_connections / len(concepts) if concepts else 0
+
+# Conceitos mais conectados (hubs)
+hubs = sorted(connections.items(), key=lambda x: -len(x[1]))[:5]
+
+# Conceitos órfãos (sem conexões)
+orphans = [c for c in concepts if c not in connections or len(connections[c]) == 0]
+
+print(f"📊 Análise de Rede de Conhecimento")
+print(f"   Total de conceitos: {len(concepts)}")
+print(f"   Total de conexões: {total_connections}")
+print(f"   Média de conexões: {avg_connections:.1f}")
+print(f"\n🔗 Hubs de conhecimento:")
+for hub, links in hubs:
+    print(f"   • {hub}: {len(links)} conexões")
+    
+if orphans:
+    print(f"\n⚠️ Conceitos órfãos ({len(orphans)}):")
+    for o in orphans[:5]:
+        print(f"   • {o}")
+    # Atualizar links para órfãos
+    for o in orphans:
+        with open(f'wiki/concepts/{o}.md') as f:
+            content = f.read()
+        if '## Conceitos Relacionados' not in content:
+            orphan_content = content.rstrip() + "\n\n## Conceitos Relacionados\n\n- [[modelo-thrive|Modelo THRIVE]]\n- [[neuroplasticidade-ayahuasca|Neuroplasticidade]]\n"
+            with open(f'wiki/concepts/{o}.md', 'w') as f:
+                f.write(orphan_content)
+            print(f"   🔧 Corrigido: {o}")
+PYEOF
+
+      - name: Phase 7 - Save State
+        run: |
+          python3 << 'PYEOF'
+import json
+from datetime import datetime
+
+state = {
+    "last_cycle": datetime.now().isoformat(),
+    "concepts": len([f for f in os.listdir('wiki/concepts') if f.endswith('.md')]),
+    "entities": len([f for f in os.listdir('wiki/entities') if f.endswith('.md')]),
+    "theme_explored": "${{ steps.research.outputs.topic || 'none' }}",
+    "cluster": "${{ steps.research.outputs.cluster || 'none' }}",
+    "workflow_run": "${{ github.run_id }}"
+}
+
+import os
+os.makedirs('.github', exist_ok=True)
+
+with open('.github/state.json', 'w') as f:
+    json.dump(state, f, indent=2)
+
+print(f"💾 Estado salvo: {state['last_cycle']}")
+print(f"📊 Conceitos: {state['concepts']} | Entidades: {state['entities']}")
+PYEOF
+
+      - name: Phase 8 - Commit and Push
+        run: |
+          git config user.name "Akasha Auto-Evolution"
+          git config user.email "auto@akasha.wiki"
+          
+          git add -A
+          
+          if git diff --cached --quiet; then
+            echo "ℹ️ Nenhuma alteração para commit"
+          else
+            git commit -m "🔮 Auto-evolução $(date +%Y-%m-%d): ${{ steps.research.outputs.topic || 'análise de rede' }}"
+            git push origin master
+            echo "✅ Push realizado"
+          fi
+
+      - name: Generate Report
+        if: always()
+        run: |
+          python3 << 'PYEOF'
+import json
+from datetime import datetime
+
+report = f"""
+# 📊 Relatório de Auto-Evolução
+## $(date +%Y-%m-%d %H:%M)
+
+### Resumo do Ciclo
+- **Iniciado:** {datetime.now().isoformat()}
+- **Tema explorado:** {open('.github/state.json').read()['theme_explored'] if os.path.exists('.github/state.json') else 'nenhum'}
+- **Duração:** ${{ duration }}
+
+### Estado Atual
+"""
+
+if os.path.exists('.github/state.json'):
+    state = json.load(open('.github/state.json'))
+    report += f"""
+- **Conceitos:** {state['concepts']}
+- **Entidades:** {state['entities']}
+- **Último ciclo:** {state['last_cycle']}
+"""
+    
+if os.path.exists('.github/gaps.json'):
+    gaps = json.load(open('.github/gaps.json'))
+    report += f"""
+### Próximas Oportunidades
+- Clusters com lacunas: {len(gaps['gaps'])}
+- Temas não explorados: {gaps['total_gaps']}
+
+"""
+    for cluster in gaps['priority_order'][:3]:
+        if cluster in gaps['gaps']:
+            report += f"**{cluster}:** {', '.join(gaps['gaps'][cluster][:3])}\n"
+
+report += """
+---
+*🤖 Gerado automaticamente pelo sistema de auto-evolução*
+"""
+
+print(report)
+
+import os
+os.makedirs('.github/reports', exist_ok=True)
+with open(f'.github/reports/report-{datetime.now().strftime("%Y%m%d-%H%M%S")}.md', 'w') as f:
+    f.write(report)
+PYEOF
