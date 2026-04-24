@@ -1,16 +1,16 @@
 {
-  "last_run": "2026-04-24T17:00:21.844003",
+  "last_run": "2026-04-24T17:00:26.640502",
   "stats": {
-    "cycles_run": 1,
-    "concepts_created": 5,
-    "connections_added": 15,
-    "orphans_fixed": 4
+    "cycles_run": 2,
+    "concepts_created": 10,
+    "connections_added": 30,
+    "orphans_fixed": 6
   },
   "created": [
-    "Screening de Seguran\u00e7a",
-    "Transtorno de Personalidade",
-    "Depress\u00e3o Refrat\u00e1ria",
-    "Ansiedade Social",
-    "Depend\u00eancia Qu\u00edmica"
+    "Contraindica\u00e7\u00f5es",
+    "Journaling",
+    "Neuroinflama\u00e7\u00e3o",
+    "Suporte de Emerg\u00eancia",
+    "TDAH"
   ]
 }
