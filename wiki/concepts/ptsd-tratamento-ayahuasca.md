@@ -49,3 +49,9 @@ Ayahuasca:
 - Marijuana Moment (Julho 2025)
 - ayahuasca-pesquisa-compilada
 - ayahuasca-psicoterapia-descobertas-2025-2026
+
+- [[screening|Screening]]
+- [[tptea|Tptea]]
+- [[depressão-refratária|Depressão Refratária]]
+- [[ansiedade-social|Ansiedade Social]]
+- [[dependência-química|Dependência Química]]

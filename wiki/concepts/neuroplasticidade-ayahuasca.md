@@ -73,3 +73,8 @@ A neuroplasticidade induzida pela ayahuasca cria uma "janela de plasticidade" �
 - [[morte-ego|Morte Ego]]
 - [[preparacao-psicológica|Preparacao Psicológica]]
 - [[ikaro-canto|Ikaro Canto]]
+- [[screening|Screening]]
+- [[tptea|Tptea]]
+- [[depressão-refratária|Depressão Refratária]]
+- [[ansiedade-social|Ansiedade Social]]
+- [[dependência-química|Dependência Química]]
